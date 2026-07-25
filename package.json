@@ -1,0 +1,25 @@
+{
+  "name": "youtube-mp3-local",
+  "version": "1.0.0",
+  "description": "Conversor local de vídeos próprios do YouTube para MP3",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "youtube",
+    "mp3",
+    "audio",
+    "yt-dlp",
+    "ffmpeg"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
