@@ -2,40 +2,134 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube MP3 Downloader</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="container">
-
-    <h1>🎵 YouTube MP3 Downloader</h1>
-
-    <p>Cole o link do vídeo do YouTube</p>
-
-    <input
-        type="text"
-        id="url"
-        placeholder="https://www.youtube.com/watch?v=..."
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
-    <select id="quality">
-        <option value="128">128 kbps</option>
-        <option value="192">192 kbps</option>
-        <option value="320">320 kbps</option>
-    </select>
+    <meta
+        name="description"
+        content="Conversor de vídeos próprios para MP3"
+    >
 
-    <button onclick="downloadMp3()">
-        Baixar MP3
-    </button>
+    <title>YouTube MP3 Downloader</title>
 
-    <div id="status"></div>
+    <link rel="stylesheet" href="/style.css">
+</head>
 
-</div>
+<body>
+    <main class="page">
+        <section class="container">
+            <div class="header">
+                <div class="icon">🎵</div>
 
-<script src="script.js"></script>
+                <div>
+                    <h1>YouTube MP3 Downloader</h1>
+                    <p>
+                        Converta vídeos próprios ou autorizados para MP3.
+                    </p>
+                </div>
+            </div>
 
+            <form id="downloadForm">
+                <label for="url">
+                    Link do vídeo
+                </label>
+
+                <div class="input-group">
+                    <input
+                        type="url"
+                        id="url"
+                        name="url"
+                        placeholder="https://youtu.be/..."
+                        autocomplete="off"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="pasteButton"
+                        class="icon-button"
+                        aria-label="Colar link"
+                    >
+                        📋
+                    </button>
+
+                    <button
+                        type="button"
+                        id="clearButton"
+                        class="icon-button clear-icon"
+                        aria-label="Limpar link"
+                    >
+                        ✕
+                    </button>
+                </div>
+
+                <label for="quality">
+                    Qualidade do áudio
+                </label>
+
+                <select id="quality" name="quality">
+                    <option value="128">
+                        128 kbps — arquivo menor
+                    </option>
+
+                    <option value="192" selected>
+                        192 kbps — recomendado
+                    </option>
+
+                    <option value="320">
+                        320 kbps — qualidade máxima
+                    </option>
+                </select>
+
+                <div class="buttons">
+                    <button
+                        type="submit"
+                        id="downloadButton"
+                        class="download-button"
+                    >
+                        <span id="buttonIcon">⬇</span>
+                        <span id="buttonText">Baixar MP3</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        id="secondaryClearButton"
+                        class="clear-button"
+                    >
+                        🗑 Limpar
+                    </button>
+                </div>
+            </form>
+
+            <div
+                id="status"
+                class="status"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+            <div id="progressBox" class="progress-box hidden">
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+
+                <p id="progressText">
+                    Preparando conversão...
+                </p>
+            </div>
+
+            <div class="notice">
+                <strong>Uso autorizado:</strong>
+                utilize apenas vídeos próprios, de domínio público ou que
+                você tenha permissão para baixar.
+            </div>
+        </section>
+    </main>
+
+    <script src="/config.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
