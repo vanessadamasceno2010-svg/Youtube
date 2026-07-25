@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube MP3 Downloader</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎵 YouTube MP3 Downloader</h1>
+
+    <p>Cole o link do vídeo do YouTube</p>
+
+    <input
+        type="text"
+        id="url"
+        placeholder="https://www.youtube.com/watch?v=..."
+    >
+
+    <select id="quality">
+        <option value="128">128 kbps</option>
+        <option value="192">192 kbps</option>
+        <option value="320">320 kbps</option>
+    </select>
+
+    <button onclick="downloadMp3()">
+        Baixar MP3
+    </button>
+
+    <div id="status"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
